@@ -13,14 +13,18 @@ public class ProductController {
     }
 @PostMapping("/addProduct")
     public String addProduct(@RequestBody ProductObject productObject){
-        if(warehouseInterface.addProduct(productObject).getWarehouseId() > 0){
-            return "Product added";
-        }
-        else{
-            return "No space available";
+        if(warehouseInterface.addProduct(productObject).getCapacity() > 0)
+       return "Product Added";
+
+        else {
+            return "No space available for Product";
         }
 
 }
+
+    public void getProductById(){
+
+    }
 @GetMapping("/Test")
     public String Test(){
     return warehouseInterface.Test();
