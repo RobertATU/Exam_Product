@@ -9,4 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface WarehouseInterface {
     @PostMapping("/addProduct")
     WarehouseObject addProduct(@RequestBody ProductObject productObject);
+
+    @GetMapping("/Test")
+    String Test();
 }
